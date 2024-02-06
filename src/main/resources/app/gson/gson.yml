@@ -1,0 +1,3 @@
+app.gson:
+  pretty: false
+  time-zone: Asia/Seoul
