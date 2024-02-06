@@ -9,11 +9,15 @@ import java.lang.reflect.Type;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class DemoLocalDateTimeSerializer implements JsonSerializer<LocalDateTime> {
+public final class DemoLocalDateTimeSerializer implements JsonSerializer<LocalDateTime> {
     private static final DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
 
     @Override
-    public JsonElement serialize(LocalDateTime src, Type typeOfSrc, JsonSerializationContext context) {
+    public JsonElement serialize(
+            LocalDateTime src,
+            Type typeOfSrc,
+            JsonSerializationContext context
+    ) {
         return new JsonPrimitive(formatter.format(src));
     }
 }

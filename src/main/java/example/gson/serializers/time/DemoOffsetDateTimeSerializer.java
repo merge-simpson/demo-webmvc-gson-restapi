@@ -9,11 +9,15 @@ import java.lang.reflect.Type;
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class DemoOffsetDateTimeSerializer implements JsonSerializer<OffsetDateTime> {
+public final class DemoOffsetDateTimeSerializer implements JsonSerializer<OffsetDateTime> {
     private static final DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
 
     @Override
-    public JsonElement serialize(OffsetDateTime src, Type typeOfSrc, JsonSerializationContext context) {
+    public JsonElement serialize(
+            OffsetDateTime src,
+            Type typeOfSrc,
+            JsonSerializationContext context
+    ) {
         return new JsonPrimitive(formatter.format(src));
     }
 }

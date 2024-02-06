@@ -12,8 +12,7 @@ import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeParseException;
 
-public class DemoOffsetDateTimeDeserializer implements JsonDeserializer<OffsetDateTime> {
-
+public final class DemoOffsetDateTimeDeserializer implements JsonDeserializer<OffsetDateTime> {
     private final ZoneId zoneId;
 
     public DemoOffsetDateTimeDeserializer(String timeZone) {
